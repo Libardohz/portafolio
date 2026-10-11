@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { X, Cpu, Layers, Code, CheckCircle, ArrowRight } from 'lucide-react';
+import { X, Cpu, Layers, Code, CheckCircle, ArrowRight, FileCode, Copy, Check } from 'lucide-react';
 
 export default function ProjectModal({ project, onClose }) {
   const { lang } = useLanguage();
   const [activeTab, setActiveTab] = useState('arch');
+  const [copiedCode, setCopiedCode] = useState(false);
+
+  const handleCopyCode = () => {
+    if (!project?.codeSnippet) return;
+    navigator.clipboard.writeText(project.codeSnippet);
+    setCopiedCode(true);
+    setTimeout(() => setCopiedCode(false), 2000);
+  };
 
   // Cerrar con tecla Escape
   useEffect(() => {
@@ -116,10 +124,55 @@ export default function ProjectModal({ project, onClose }) {
 
           {activeTab === 'code' && (
             <div className="tab-pane">
-              <span className="section-label">{lang === 'es' ? 'Implementación Representativa' : 'Implementação Representativa'}</span>
-              <pre className="code-viewer font-mono">
-                <code>{project.codeSnippet}</code>
-              </pre>
+              {/* Barra superior del editor con nombre de archivo y botón de copiado */}
+              <div className="code-editor-header font-mono">
+                <div className="code-file-meta">
+                  <FileCode size={14} className="code-file-icon" />
+                  <span className="code-file-name">{project.fileName || 'source.js'}</span>
+                  {project.language && (
+                    <span className="badge code-lang-badge">{project.language}</span>
+                  )}
+                </div>
+                <button
+                  type="button"
+                  className="btn btn-secondary btn-sm btn-copy-code"
+                  onClick={handleCopyCode}
+                  title={lang === 'es' ? 'Copiar código al portapapeles' : 'Copiar código'}
+                >
+                  {copiedCode ? <Check size={13} className="text-emerald" /> : <Copy size={13} />}
+                  <span>{copiedCode ? (lang === 'es' ? '¡Copiado!' : 'Copiado!') : (lang === 'es' ? 'Copiar Código' : 'Copiar Código')}</span>
+                </button>
+              </div>
+
+              {/* Visor con numeración de líneas profesional */}
+              <div className="code-editor-wrapper font-mono">
+                <div className="code-editor-scroll">
+                  <table className="code-table">
+                    <tbody>
+                      {project.codeSnippet.split('\n').map((line, idx) => (
+                        <tr key={idx} className="code-line-row">
+                          <td className="code-line-number">
+                            {String(idx + 1).padStart(2, '0')}
+                          </td>
+                          <td className="code-line-content">
+                            <code>{line || ' '}</code>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Explicación de ingeniería de software */}
+              {project.codeExplanation && (
+                <div className="card code-explanation-card mt-3">
+                  <span className="section-label">
+                    {lang === 'es' ? '// Decisión de Diseño & Arquitectura' : '// Decisão de Arquitetura'}
+                  </span>
+                  <p className="code-explanation-text">{project.codeExplanation}</p>
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -331,17 +384,108 @@ export default function ProjectModal({ project, onClose }) {
           color: var(--accent-teal);
         }
 
-        .code-viewer {
-          background-color: #09090c;
+        /* Editor de código estilo IDE con numeración */
+        .code-editor-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: #0c0c10;
           border: 1px solid var(--border-hairline);
-          border-radius: 8px;
-          padding: 1rem;
-          font-size: 0.8rem;
-          line-height: 1.5;
-          color: #a7f3d0;
-          overflow-x: auto;
-          margin-top: 0.5rem;
+          border-bottom: none;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          padding: 0.55rem 0.85rem;
+          margin-top: 0.25rem;
         }
+
+        .code-file-meta {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .code-file-icon {
+          color: var(--accent-teal);
+        }
+
+        .code-file-name {
+          font-size: 0.78rem;
+          font-weight: 600;
+          color: #fafafa;
+        }
+
+        .code-lang-badge {
+          font-size: 0.68rem;
+          padding: 0.1rem 0.4rem;
+        }
+
+        .btn-copy-code {
+          padding: 0.25rem 0.6rem;
+          font-size: 0.75rem;
+          gap: 0.35rem;
+        }
+
+        .code-editor-wrapper {
+          background-color: #070709;
+          border: 1px solid var(--border-hairline);
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+          overflow: hidden;
+        }
+
+        .code-editor-scroll {
+          overflow-x: auto;
+          max-height: 380px;
+          padding: 0.75rem 0;
+        }
+
+        .code-table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 0.78rem;
+          line-height: 1.6;
+        }
+
+        .code-line-row:hover {
+          background-color: rgba(255, 255, 255, 0.025);
+        }
+
+        .code-line-number {
+          width: 44px;
+          min-width: 44px;
+          text-align: right;
+          padding: 0 0.85rem 0 0.5rem;
+          color: #4b5563;
+          user-select: none;
+          border-right: 1px solid rgba(255, 255, 255, 0.06);
+          font-size: 0.72rem;
+        }
+
+        .code-line-content {
+          padding: 0 1rem;
+          white-space: pre;
+          color: #e2e8f0;
+        }
+
+        .code-line-content code {
+          color: #93c5fd;
+        }
+
+        .code-explanation-card {
+          background-color: rgba(20, 184, 166, 0.04);
+          border-color: rgba(20, 184, 166, 0.2);
+          padding: 1rem;
+        }
+
+        .code-explanation-text {
+          font-size: 0.825rem;
+          color: var(--text-secondary);
+          line-height: 1.55;
+          margin-top: 0.35rem;
+          margin-bottom: 0;
+        }
+
+        .mt-3 { margin-top: 0.85rem; }
 
         .modal-footer {
           padding: 1rem 1.5rem;
