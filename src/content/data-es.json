@@ -113,6 +113,41 @@
       { "name": "Portugués", "level": "Intermedio (B1/B2)", "detail": "Lectura técnica, escritura y conversación aplicada" }
     ]
   },
+  "solutions": {
+    "label": "// Casos de Uso & Valor Operativo",
+    "title": "Problemas Concretos que Resuelvo",
+    "subtitle": "Capacidad técnica enfocada en eliminar cuellos de botella, automatizar tareas manuales repetitivas y construir microaplicaciones funcionales.",
+    "items": [
+      {
+        "id": "scraping",
+        "title": "Extracción & Estructuración de Datos (Web Scraping)",
+        "pain": "Pérdida de horas recolectando precios, catálogos o información web manualmente sin acceso a APIs.",
+        "deliverable": "Crawlers y scrapers autónomos (Node.js/Cheerio) que extraen, normalizan y persisten datos en SQLite o PostgreSQL sin intervención.",
+        "tags": ["Node.js", "Cheerio", "SQLite", "Cron", "ETL"]
+      },
+      {
+        "id": "microapps",
+        "title": "Desarrollo Ágil de Microaplicaciones Web",
+        "pain": "Procesos internos dependientes de hojas de cálculo desordenadas o flujos manuales propensos a error.",
+        "deliverable": "Herramientas web progresivas (PWA) con React y Vite, funcionales offline, con escaneo OCR o exportación directa a PDF.",
+        "tags": ["React 18", "PWA", "Offline-First", "Vite", "Supabase"]
+      },
+      {
+        "id": "bots",
+        "title": "Automatización de Alertas & Notificaciones",
+        "pain": "Falta de visibilidad inmediata ante variaciones de precios, inventario o eventos críticos de negocio.",
+        "deliverable": "Bots de mensajería (Telegram) que monitorean fuentes 24/7 y disparan alertas push contextualizadas en < 2 segundos.",
+        "tags": ["Telegram Bot API", "Webhooks", "JSON APIs", "Alertas Push"]
+      },
+      {
+        "id": "support",
+        "title": "Soporte Técnico de Software & Refactorización",
+        "pain": "Sistemas con bugs recurrentes, código acoplado o necesidad de soporte técnico de nivel básico e intermedio.",
+        "deliverable": "Diagnóstico de fallos, corrección de errores, soporte a bases de datos relacionales y refactorización orientada a objetos.",
+        "tags": ["Java 17", "Spring Boot", "SQL", "Soporte SENA", "Clean Code"]
+      }
+    ]
+  },
   "contact": {
     "title": "Contacto Directo & Contratación",
     "subtitle": "¿Tienes una vacante o proyecto en mente? Respondo directamente por estos canales:",

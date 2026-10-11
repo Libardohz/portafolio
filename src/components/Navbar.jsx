@@ -31,6 +31,9 @@ export default function Navbar({ onOpenCv }) {
             <a href="#proyectos" className="navbar-nav-link">
               {lang === 'es' ? 'Proyectos' : 'Projetos'}
             </a>
+            <a href="#soluciones" className="navbar-nav-link">
+              {lang === 'es' ? 'Soluciones' : 'Soluções'}
+            </a>
             <a href="#trayectoria" className="navbar-nav-link">
               {lang === 'es' ? 'Trayectoria' : 'Trajetória'}
             </a>

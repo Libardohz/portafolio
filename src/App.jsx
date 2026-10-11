@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import StatsBar from './components/StatsBar';
 import ProjectShowcase from './components/ProjectShowcase';
+import SolutionsSection from './components/SolutionsSection';
 import FormationTimeline from './components/FormationTimeline';
 import SkillsMatrix from './components/SkillsMatrix';
 import ContactSection from './components/ContactSection';
@@ -20,6 +21,7 @@ function PortfolioApp() {
         <Hero onOpenCv={() => setIsCvOpen(true)} />
         <StatsBar />
         <ProjectShowcase />
+        <SolutionsSection />
         <FormationTimeline />
         <SkillsMatrix />
         <ContactSection onOpenCv={() => setIsCvOpen(true)} />

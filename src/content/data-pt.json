@@ -113,6 +113,41 @@
       { "name": "Português", "level": "Intermediário (B1/B2)", "detail": "Leitura técnica, escrita e conversação aplicada" }
     ]
   },
+  "solutions": {
+    "label": "// Casos de Uso & Valor Operacional",
+    "title": "Problemas Concretos que Resolvo",
+    "subtitle": "Capacidade técnica focada em eliminar gargalos de dados, automatizar rotinas manuais repetitivas e criar microaplicações funcionais.",
+    "items": [
+      {
+        "id": "scraping",
+        "title": "Extração & Estruturação de Dados (Web Scraping)",
+        "pain": "Horas perdidas coletando preços, catálogos ou dados de páginas web manualmente sem APIs públicas.",
+        "deliverable": "Crawlers e scrapers autônomos (Node.js/Cheerio) que extraem, normalizam e persistem dados em SQLite ou PostgreSQL sem intervenção.",
+        "tags": ["Node.js", "Cheerio", "SQLite", "Cron", "ETL"]
+      },
+      {
+        "id": "microapps",
+        "title": "Desenvolvimento Ágil de Microaplicações Web",
+        "pain": "Processos internos dependentes de planilhas desorganizadas ou fluxos lentos sujeitos a erros humanos.",
+        "deliverable": "Aplicações web progressivas (PWA) em React e Vite, com funcionamento offline, OCR integrado e exportação em PDF.",
+        "tags": ["React 18", "PWA", "Offline-First", "Vite", "Supabase"]
+      },
+      {
+        "id": "bots",
+        "title": "Automação de Alertas & Notificações",
+        "pain": "Falta de visibilidade imediata diante de oscilações de preços, estoque ou eventos críticos do negócio.",
+        "deliverable": "Bots de mensageria (Telegram) monitorando fontes 24/7 com alertas push contextualizados disparados em < 2 segundos.",
+        "tags": ["Telegram Bot API", "Webhooks", "JSON APIs", "Alertas Push"]
+      },
+      {
+        "id": "support",
+        "title": "Suporte Técnico de Software & Refatoração",
+        "pain": "Sistemas com falhas recorrentes, código acoplado ou necessidade de suporte técnico prático e confiável.",
+        "deliverable": "Diagnóstico de falhas, correção de bugs, suporte a bancos relacionais e refatoração com arquitetura limpa.",
+        "tags": ["Java 17", "Spring Boot", "SQL", "Suporte SENA", "Clean Code"]
+      }
+    ]
+  },
   "contact": {
     "title": "Contato Direto & Recrutamento",
     "subtitle": "Tem uma vaga ou projeto? Entre em contato diretamente pelos canais abaixo:",
