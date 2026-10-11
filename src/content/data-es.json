@@ -1,0 +1,134 @@
+{
+  "profile": {
+    "name": "Libardo Hernández",
+    "title": "Automatización de Procesos & Microapps · Soporte de Software",
+    "status": "Disponible para vinculación inmediata (100% Remoto)",
+    "location": "Colombia · Remoto (Global)",
+    "summary": "Estudiante de Ingeniería de Sistemas (Universidad de Córdoba) y Tecnólogo en Análisis y Desarrollo de Software (ADSO - SENA), graduado como Técnico en Sistemas del SENA. Especializado en resolver necesidades operativas mediante automatización de tareas (web scraping, bots, scripts programados), desarrollo ágil de microaplicaciones útiles y soporte técnico a plataformas. Enfoque práctico, alta adaptabilidad y soluciones directas sin sobreingeniería.",
+    "email": "libardohernandez078@gmail.com"
+  },
+  "stats": [
+    { "label": "Proyectos Productivos", "value": "4+", "desc": "Sistemas completos y aplicaciones web" },
+    { "label": "Automatizaciones & Bots", "value": "100%", "desc": "Rastreo continuo sin intervención" },
+    { "label": "Tecnologías de Producción", "value": "12+", "desc": "Java, Spring Boot, React, Node, SQLite" },
+    { "label": "Idiomas", "value": "2", "desc": "Español (Nativo) · Portugués (Intermedio)" }
+  ],
+  "projects": [
+    {
+      "id": "gestor-pwa",
+      "title": "Task Manager & Gestor PWA",
+      "badge": "PWA Offline-First",
+      "category": "Frontend & Integración Cloud",
+      "shortDesc": "Plataforma web progresiva de productividad con persistencia offline, integración de IA mediante Groq SDK, escaneo OCR de documentos y generador de reportes en PDF.",
+      "stack": ["React 18", "Vite", "Supabase", "Groq AI SDK", "Tesseract.js OCR", "jspdf", "PWA"],
+      "metrics": ["100% soporte offline", "0ms latencia en lecturas locales", "OCR directo en navegador"],
+      "problem": "Los usuarios requerían digitalizar recibos y documentos físicos sin conexión y sin enviar imágenes a servidores de terceros que comprometieran la privacidad.",
+      "solution": "Se implementó un motor OCR local con Tesseract.js ejecutado en Web Worker, almacenamiento reactivo en Supabase con sincronización condicional, y asistencia de modelos LLM ultrarrápidos vía Groq.",
+      "architecture": "Cliente React PWA -> Service Worker (Caché Offline) -> Web Worker (OCR Tesseract) -> Supabase PostgreSQL (Sincronización segura) -> Groq API (Inferencia).",
+      "codeSnippet": "// Procesamiento OCR local en el cliente sin backend intermediario\nconst extractTextFromImage = async (imageFile) => {\n  const worker = await createWorker('spa');\n  const { data: { text } } = await worker.recognize(imageFile);\n  await worker.terminate();\n  return sanitizeInput(text);\n};"
+    },
+    {
+      "id": "ofertas-tracker",
+      "title": "OfertasTracker: Scraping & Bot Telegram",
+      "badge": "Automatización Desatendida",
+      "category": "Web Scraping & Bots",
+      "shortDesc": "Sistema autónomo de monitoreo de precios en grandes superficies (Almacenes Éxito), detección de ofertas anómalas en tiempo real y despacho de alertas push por Telegram.",
+      "stack": ["Node.js", "SQLite", "Cheerio", "Axios", "Telegram Bot API", "Cron Jobs"],
+      "metrics": ["Rastreo desatendido 24/7", "Registro histórico de precios", "Alertas push < 2 seg"],
+      "problem": "Las tiendas de retail cambian precios rápidamente y muchas ofertas publicitadas son engañosas al no contrastar contra un histórico confiable de precios reales.",
+      "solution": "Se diseñó un crawler automatizado que extrae catálogos completos periódicamente, normaliza datos en SQLite calculando la desviación de precio y dispara alertas vía Telegram ante caídas comprobadas.",
+      "architecture": "Scheduler (Cron) -> Scraper Engine (Axios + Cheerio) -> Validador de Precios -> SQLite Storage (Histórico) -> Telegram Notification Dispatcher.",
+      "codeSnippet": "// Detección de caída real de precio y notificación inmediata\nasync function evaluatePriceDrop(product, currentPrice) {\n  const historicalAvg = await db.getAveragePrice(product.id);\n  const discountPercent = ((historicalAvg - currentPrice) / historicalAvg) * 100;\n  if (discountPercent >= 25) {\n    await sendTelegramAlert(product, currentPrice, discountPercent);\n  }\n}"
+    },
+    {
+      "id": "registro-vehicular",
+      "title": "Sistema de Control y Registro Vehicular",
+      "badge": "Backend Enterprise",
+      "category": "Arquitectura Backend",
+      "shortDesc": "Sistema empresarial para control de ingresos y egresos vehiculares en campus, validación estricta de accesos por placa y generación de reportes operativos.",
+      "stack": ["Java 17", "Spring Boot 3", "Spring MVC", "Thymeleaf", "JUnit 5", "Maven"],
+      "metrics": ["Arquitectura por capas", "Validación estricta de dominio", "Auditoría en tiempo real"],
+      "problem": "Congestión y falta de trazabilidad en las entradas vehiculares de una institución, generando discrepancias en el inventario de vehículos activos.",
+      "solution": "Desarrollo de una arquitectura desacoplada en Spring Boot con entidades de dominio aisladas, validación de reglas de acceso en capas de servicio y renderizado reactivo con Thymeleaf.",
+      "architecture": "Controller Layer (Spring MVC) -> Service Layer (Reglas de Negocio) -> Repository Layer -> Base de Datos Relacional -> Auditoría de Eventos.",
+      "codeSnippet": "@Service\npublic class ControlVehicularService {\n    public RegistroAcceso registrarEntrada(Vehiculo vehiculo) {\n        validarAutorizacion(vehiculo.getPlaca());\n        return registroRepository.save(new RegistroAcceso(vehiculo, LocalDateTime.now()));\n    }\n}"
+    },
+    {
+      "id": "tienda-patrones-poo",
+      "title": "Catálogo de Dispositivos & Patrones POO",
+      "badge": "Principios SOLID",
+      "category": "Ingeniería de Software",
+      "shortDesc": "Aplicación demostrativa de fundamentos avanzados de Programación Orientada a Objetos: Singleton, Fábrica, polimorfismo, herencia y desacoplamiento estructural.",
+      "stack": ["Java 17", "Spring Boot", "Patrones GoF", "Maven", "Thymeleaf"],
+      "metrics": ["Cero acoplamiento innecesario", "Patrón Singleton garantizado", "Código limpio y extensible"],
+      "problem": "Dificultad recurrente en proyectos comerciales al escalar tipos de productos y dispositivos sin alterar o duplicar la lógica de negocio central.",
+      "solution": "Modelado de jerarquía de clases limpia con interfaces de contrato, uso del patrón Singleton para gestión de inventario global y polimorfismo dinámico en liquidaciones.",
+      "architecture": "Domain Interfaces -> Abstract Product Classes -> Concrete Implementations -> Singleton Inventory Manager -> View Resolver.",
+      "codeSnippet": "public class InventarioSingleton {\n    private static volatile InventarioSingleton instance;\n    private InventarioSingleton() {}\n    public static InventarioSingleton getInstance() {\n        if (instance == null) {\n            synchronized (InventarioSingleton.class) {\n                if (instance == null) instance = new InventarioSingleton();\n            }\n        }\n        return instance;\n    }\n}"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Ingeniería de Sistemas",
+      "institution": "Universidad de Córdoba",
+      "period": "En Curso",
+      "status": "Activo",
+      "focus": "Algoritmos avanzados, estructuras de datos, arquitectura de software, bases de datos y gestión de proyectos tecnológicos."
+    },
+    {
+      "degree": "Tecnólogo en Análisis y Desarrollo de Software (ADSO)",
+      "institution": "SENA (Servicio Nacional de Aprendizaje)",
+      "period": "En Curso",
+      "status": "Activo",
+      "focus": "Diseño de soluciones informáticas, ciclo de vida de desarrollo de software, modelado UML, backend, frontend y metodologías ágiles (Scrum)."
+    },
+    {
+      "degree": "Técnico en Sistemas",
+      "institution": "SENA (Servicio Nacional de Aprendizaje)",
+      "period": "Certificado",
+      "status": "Graduado",
+      "focus": "Mantenimiento preventivo y correctivo, infraestructura de redes de datos, cableado estructurado, soporte de sistemas y seguridad lógica."
+    }
+  ],
+  "skills": {
+    "automation": [
+      { "name": "Web Scraping", "detail": "Cheerio, Axios, parseo de DOM dinámico" },
+      { "name": "Bots de Mensajería", "detail": "Telegram Bot API, webhooks y polling" },
+      { "name": "Automatización Desatendida", "detail": "Node.js scripts, Cron jobs, tareas programadas" }
+    ],
+    "backend": [
+      { "name": "Java & Spring Boot", "detail": "Java 17, Spring Boot 3, MVC, REST APIs" },
+      { "name": "Node.js", "detail": "Express, arquitectura de microservicios y scripts" },
+      { "name": "Bases de Datos", "detail": "PostgreSQL, SQLite, Supabase, consultas SQL" },
+      { "name": "Principios & Patrones", "detail": "POO avanzada, SOLID, Singleton, Factory" }
+    ],
+    "frontend": [
+      { "name": "React & Vite", "detail": "React 18/19, Hooks, Context, SPAs" },
+      { "name": "PWA & Offline-First", "detail": "Service Workers, Web App Manifest, Cache Storage" },
+      { "name": "HTML5 & CSS Moderno", "detail": "Variables CSS, maquetación responsiva, accesibilidad" },
+      { "name": "Integraciones Web", "detail": "OCR en cliente (Tesseract.js), exportación PDF (jspdf)" }
+    ],
+    "languages": [
+      { "name": "Español", "level": "Nativo", "detail": "Lengua materna, comunicación profesional fluida" },
+      { "name": "Portugués", "level": "Intermedio (B1/B2)", "detail": "Lectura técnica, escritura y conversación aplicada" }
+    ]
+  },
+  "contact": {
+    "title": "Contacto Directo & Contratación",
+    "subtitle": "¿Tienes una vacante o proyecto en mente? Respondo directamente por estos canales:",
+    "channels": [
+      {
+        "type": "email",
+        "title": "Correo Electrónico Directo",
+        "value": "libardohernandez078@gmail.com",
+        "note": "Copia rápida al portapapeles o clic para redactar"
+      },
+      {
+        "type": "cv",
+        "title": "Hoja de Vida (CV)",
+        "value": "Ver / Imprimir PDF",
+        "note": "Formato ejecutivo completo para procesos de selección"
+      }
+    ]
+  }
+}
