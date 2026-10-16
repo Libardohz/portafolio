@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { X, Printer, Download, Copy, Check, FileText } from 'lucide-react';
+import { X, Printer, Copy, Check } from 'lucide-react';
 
 export default function CvModal({ isOpen, onClose }) {
   const { lang, t } = useLanguage();
@@ -24,127 +24,113 @@ export default function CvModal({ isOpen, onClose }) {
   };
 
   const plainTextHarvardEs = `LIBARDO HERNÁNDEZ
-Montería, Colombia | (+57) libardohernandez078@gmail.com | github.com/Libardohz | libardo-hernandez.netlify.app
+Montería, Colombia | libardohernandez078@gmail.com | github.com/Libardohz | libardo-hernandez.netlify.app
 Disponibilidad: Inmediata (Modalidad 100% Remoto)
 
 ==================================================
 PERFIL PROFESIONAL
 ==================================================
-Estudiante de Ingeniería de Sistemas (Universidad de Córdoba), Tecnólogo en Análisis y Desarrollo de Software (ADSO - SENA) y Técnico en Sistemas egresado del SENA. Especializado en resolución de cuellos de botella operativos mediante automatización de tareas (web scraping, bots autónomos, scripts programados), desarrollo de microaplicaciones web útiles y soporte técnico de software y hardware. Sólidas bases en desarrollo orientado a objetos (Java 17, Spring Boot), JavaScript moderno, gestión de bases de datos relacionales y herramientas ofimáticas avanzadas (Excel).
+Estudiante de Ingeniería de Sistemas (Universidad de Córdoba), Tecnólogo en Análisis y Desarrollo de Software (ADSO - SENA) y Técnico en Sistemas egresado del SENA. Especializado en resolución de cuellos de botella mediante automatización de tareas (web scraping, bots, scripts programados), desarrollo de microaplicaciones web y soporte técnico de software y hardware. Sólidas bases en desarrollo orientado a objetos (Java 17, Spring Boot), JavaScript moderno, bases de datos relacionales y Excel avanzado.
 
 ==================================================
 EDUCACIÓN
 ==================================================
 UNIVERSIDAD DE CÓRDOBA | Montería, Colombia
 Pregrado en Ingeniería de Sistemas | En curso (Estado: Activo)
-• Énfasis: Algoritmos y estructuras de datos, arquitectura de software, bases de datos relacionales, cálculo y gestión de proyectos tecnológicos.
+• Algoritmos, estructuras de datos, arquitectura de software, bases de datos relacionales y gestión de proyectos tecnológicos.
 
 SERVICIO NACIONAL DE APRENDIZAJE (SENA) | Colombia
 Tecnología en Análisis y Desarrollo de Software (ADSO) | En curso (Estado: Activo)
-• Énfasis: Ciclo de vida del software (SDLC), metodologías ágiles (Scrum), desarrollo backend con Java y Spring Boot, interfaces web con React y modelado UML.
+• Ciclo de vida del software (SDLC), Scrum, desarrollo backend con Java y Spring Boot 3, interfaces web con React y modelado UML.
 
 SERVICIO NACIONAL DE APRENDIZAJE (SENA) | Colombia
 Técnico en Sistemas | Certificado (Graduado)
-• Énfasis: Diagnóstico, mantenimiento preventivo y correctivo de cómputo, infraestructura de redes de datos, cableado estructurado, seguridad básica y soporte a usuarios.
+• Mantenimiento preventivo/correctivo de hardware, configuración de redes de datos, cableado estructurado y soporte técnico.
 
 ==================================================
-PROYECTOS DE INGENIERÍA & AUTOMATIZACIÓN
+PROYECTOS TÉCNICOS & DE INGENIERÍA
 ==================================================
 Task Manager & Gestor PWA | React 18, Vite, Supabase, Groq AI, Web Workers, Tesseract.js
-• Diseñó e implementó una aplicación web progresiva (PWA) offline-first con sincronización condicional reactiva a base de datos PostgreSQL vía Supabase.
-• Integró motor de reconocimiento óptico de caracteres (OCR) ejecutado en segundo plano con Web Workers, procesando documentos en cliente con 0ms de latencia en red.
-• Incorporó exportación automatizada de reportes en PDF y asistencia de inferencia con modelos LLM ultrarrápidos vía Groq SDK.
+• Diseñó Progressive Web App (PWA) offline-first con persistencia local y sincronización reactiva en PostgreSQL vía Supabase.
+• Integró motor OCR en Web Workers procesando documentos en cliente con 0ms de latencia, exportación PDF y modelos LLM con Groq SDK.
 
 OfertasTracker: Crawler Autónomo & Bot Telegram | Node.js, Cheerio, Axios, SQLite, Telegram API
-• Diseñó un web scraper desatendido programado con cron jobs para rastreo periódico de catálogos comerciales de grandes superficies.
-• Estructuró motor de persistencia y análisis en SQLite para contrastar precios contra promedios históricos y filtrar falsas promociones de retail.
-• Automatizó el despacho de alertas push en tiempo real a través de Telegram Bot API en menos de 2 segundos tras detectar anomalías de precio.
+• Crawler desatendido con cron jobs para rastreo periódico de catálogos y almacenamiento histórico en SQLite para filtrar falsas rebajas.
+• Automatizó despacho de alertas push en tiempo real a través de Telegram Bot API en menos de 2 segundos tras detectar caídas de precio.
 
-Sistema de Control y Registro Vehicular | Java 17, Spring Boot 3, Spring MVC, Thymeleaf, JPA
-• Arquitectó backend empresarial multicapa (Controlador, Servicio, Repositorio) para la trazabilidad y auditoría de accesos vehiculares en campus.
-• Implementó validaciones transaccionales estrictas a nivel de dominio para impedir registros simultáneos sin salida y garantizar consistencia de datos.
-
-Catálogo de Dispositivos & Patrones POO | Java 17, Patrones de Diseño GoF, Maven
-• Implementó patrón Singleton thread-safe con double-checked locking y ConcurrentHashMap para gestión centralizada de inventario.
-• Aplicó principios SOLID y polimorfismo dinámico garantizando desacoplamiento estructural y facilidad de extensión de componentes.
+Sistema de Control y Registro Vehicular | Java 17, Spring Boot 3, Spring MVC, JPA, Thymeleaf
+• Arquitectó backend empresarial desacoplado en capas (Controller, Service, Repository) para trazabilidad de accesos en campus.
+• Implementó validaciones transaccionales estrictas en la capa de servicio para prevenir registros simultáneos sin salida.
 
 ==================================================
 EXPERIENCIA PRÁCTICA & SOPORTE TÉCNICO
 ==================================================
-Desarrollador Independiente & Soporte de Sistemas | Colombia (2023 - Presente)
-• Diagnóstico, mantenimiento preventivo y correctivo de equipos de cómputo, configuración de periféricos y solución de fallas operativas de software.
-• Automatización de flujos repetitivos mediante scripts en Node.js, optimizando tiempos de recolección de datos y reportes operativos.
-• Asistencia en gestión y depuración de bases de datos relacionales (SQLite / PostgreSQL) y elaboración de reportes en Microsoft Excel.
+Desarrollo Independiente & Soporte de Sistemas | Colombia (2023 – Presente)
+• Diagnóstico y mantenimiento preventivo/correctivo de hardware y software, configuración de periféricos y solución ágil de incidencias.
+• Automatización de tareas repetitivas de recolección de datos mediante scripts en Node.js y reportes avanzados en Microsoft Excel.
 
 ==================================================
 COMPETENCIAS TÉCNICAS E IDIOMAS
 ==================================================
-• Lenguajes de Programación: Java 17, JavaScript (ES6+), SQL, HTML5, CSS3.
-• Frameworks & Librerías: Spring Boot 3, React 18, Vite, Express, Cheerio, Axios, Tesseract.js.
+• Lenguajes: Java 17, JavaScript (ES6+), SQL, HTML5, CSS3.
+• Frameworks & Librerías: Spring Boot 3, React 18, Vite, Express, Cheerio, Axios, Tesseract.js, jspdf.
 • Bases de Datos & Cloud: PostgreSQL, SQLite, Supabase, Git, GitHub, RESTful APIs, Netlify.
-• Soporte & Sistemas: Diagnóstico de hardware y redes (SENA), soporte técnico a usuarios, Excel avanzado (tablas dinámicas, fórmulas, reportes).
+• Soporte & Herramientas: Diagnóstico de hardware y redes (SENA), soporte técnico a usuarios, Excel avanzado (tablas dinámicas, fórmulas).
 • Idiomas: Español (Nativo) | Portugués (Intermedio B1/B2 - lectura técnica y conversación).`;
 
   const plainTextHarvardPt = `LIBARDO HERNÁNDEZ
-Montería, Colômbia | (+57) libardohernandez078@gmail.com | github.com/Libardohz | libardo-hernandez.netlify.app
+Montería, Colômbia | libardohernandez078@gmail.com | github.com/Libardohz | libardo-hernandez.netlify.app
 Disponibilidade: Imediata (Modalidade 100% Remoto)
 
 ==================================================
 PERFIL PROFISSIONAL
 ==================================================
-Estudante de Engenharia de Sistemas (Universidade de Córdoba), Tecnólogo em Análise e Desenvolvimento de Software (ADSO - SENA) e Técnico em Sistemas formado pelo SENA. Especializado na resolução de gargalos operacionais por meio de automação de processos (web scraping, bots autônomos, scripts agendados), desenvolvimento ágil de microaplicações web e suporte técnico a sistemas e hardware. Sólida fundamentação em desenvolvimento orientado a objetos (Java 17, Spring Boot), JavaScript moderno, bancos de dados relacionais e ferramentas de escritório avançadas (Excel).
+Estudante de Engenharia de Sistemas (Universidade de Córdoba), Tecnólogo em Análise e Desenvolvimento de Software (ADSO - SENA) e Técnico em Sistemas formado pelo SENA. Especializado na automação de processos (web scraping, bots, scripts agendados), desenvolvimento ágil de microaplicações web e suporte técnico a sistemas e hardware. Sólida fundamentação em POO (Java 17, Spring Boot), JavaScript moderno, bancos de dados relacionais e Excel avançado.
 
 ==================================================
 FORMAÇÃO ACADÊMICA
 ==================================================
 UNIVERSIDADE DE CÓRDOBA | Montería, Colômbia
 Graduação em Engenharia de Sistemas | Em andamento (Status: Ativo)
-• Ênfase: Algoritmos e estruturas de dados, arquitetura de software, bancos de dados relacionais, cálculo e gestão de projetos tecnológicos.
+• Algoritmos, estruturas de dados, arquitetura de software, bancos de dados relacionais e governança tecnológica.
 
 SERVIÇO NACIONAL DE APRENDIZAGEM (SENA) | Colômbia
 Tecnólogo em Análise e Desenvolvimento de Software (ADSO) | Em andamento (Status: Ativo)
-• Ênfase: Ciclo de vida de software (SDLC), metodologias ágeis (Scrum), desenvolvimento backend com Java e Spring Boot, interfaces com React e modelagem UML.
+• Ciclo de vida de software (SDLC), Scrum, backend com Java e Spring Boot 3, interfaces com React e modelagem UML.
 
 SERVIÇO NACIONAL DE APRENDIZAGEM (SENA) | Colômbia
 Técnico em Sistemas | Certificado (Graduado)
-• Ênfase: Diagnóstico e manutenção preventiva/corretiva de computadores, redes de dados, cabeamento estruturado, segurança básica e suporte técnico a usuários.
+• Manutenção preventiva e corretiva de hardware, infraestrutura de redes, cabeamento estruturado e suporte técnico.
 
 ==================================================
-PROJETOS DE ENGENHARIA & AUTOMAÇÃO
+PROJETOS TÉCNICOS & ENGENHARIA
 ==================================================
 Task Manager & Gestor PWA | React 18, Vite, Supabase, Groq AI, Web Workers, Tesseract.js
-• Projetou e desenvolveu Progressive Web App (PWA) offline-first com sincronização condicional a banco PostgreSQL via Supabase.
-• Integrou motor de reconhecimento óptico de caracteres (OCR) em Web Workers, processando documentos no cliente com 0ms de latência de rede.
-• Incorporou geração client-side de relatórios em PDF e inferência com modelos LLM ultrarrápidos via Groq SDK.
+• Desenvolveu PWA offline-first com persistência local e sincronização reativa em PostgreSQL via Supabase.
+• Integrou OCR em Web Workers no cliente com 0ms de latência, geração de relatórios em PDF e inferência LLM via Groq SDK.
 
 OfertasTracker: Crawler Autônomo & Bot Telegram | Node.js, Cheerio, Axios, SQLite, Telegram API
-• Desenvolveu web scraper autônomo agendado com cron jobs para monitoramento contínuo de catálogos do grande varejo.
-• Estruturou rotina de persistência e análise em SQLite para contrastar preços com históricos médios e filtrar falsas promoções.
-• Automatizou o envio de alertas push em tempo real via Telegram Bot API em menos de 2 segundos após detecção de anomalias.
+• Crawler autônomo com cron jobs para coleta periódica de catálogos e análise em SQLite para filtrar falsas promoções.
+• Automatizou alertas push em tempo real via Telegram Bot API em menos de 2 segundos após detectar quedas de preço.
 
-Sistema de Controle e Registro Veicular | Java 17, Spring Boot 3, Spring MVC, Thymeleaf, JPA
-• Arquitetou backend corporativo em camadas (Controller, Service, Repository) para rastreabilidade de acessos veiculares em campus.
-• Implementou validações transacionais rigorosas no domínio para impedir entradas duplicadas e garantir integridade na auditoria.
-
-Catálogo de Dispositivos & Padrões POO | Java 17, Padrões de Projeto GoF, Maven
-• Implementou padrão Singleton thread-safe com double-checked locking e ConcurrentHashMap para gerenciamento centralizado de inventário.
-• Aplicou princípios SOLID e polimorfismo dinâmico, assegurando baixo acoplamento e extensibilidade limpa do código.
+Sistema de Controle e Registro Veicular | Java 17, Spring Boot 3, Spring MVC, JPA, Thymeleaf
+• Arquitetou backend corporativo em camadas (Controller, Service, Repository) para rastreabilidade de acessos em campus.
+• Implementou validações transacionais rigorosas na camada de serviço para impedir duplicidades de entrada.
 
 ==================================================
 EXPERIÊNCIA PRÁTICA & SUPORTE TÉCNICO
 ==================================================
-Desenvolvedor Independente & Suporte de Sistemas | Colômbia (2023 - Presente)
-• Diagnóstico e manutenção de equipamentos de informática, configuração de periféricos e resolução de falhas operacionais.
-• Automação de rotinas repetitivas com scripts em Node.js, otimizando o tempo de coleta de dados e relatórios operacionais.
-• Suporte na gestão de bancos relacionais (SQLite / PostgreSQL) e confecção de relatórios avançados em Microsoft Excel.
+Desenvolvimento Independente & Suporte de Sistemas | Colômbia (2023 – Presente)
+• Diagnóstico e manutenção de equipamentos de informática, configuração de redes locais e resolução de falhas operacionais.
+• Automação de rotinas repetitivas de coleta de dados com scripts Node.js e confecção de relatórios avançados em Excel.
 
 ==================================================
 COMPETÊNCIAS TÉCNICAS E IDIOMAS
 ==================================================
-• Linguagens de Programação: Java 17, JavaScript (ES6+), SQL, HTML5, CSS3.
-• Frameworks & Bibliotecas: Spring Boot 3, React 18, Vite, Express, Cheerio, Axios, Tesseract.js.
+• Linguagens: Java 17, JavaScript (ES6+), SQL, HTML5, CSS3.
+• Frameworks & Bibliotecas: Spring Boot 3, React 18, Vite, Express, Cheerio, Axios, Tesseract.js, jspdf.
 • Bancos de Dados & Cloud: PostgreSQL, SQLite, Supabase, Git, GitHub, RESTful APIs, Netlify.
-• Suporte & Sistemas: Diagnóstico de hardware e redes (SENA), suporte técnico a usuários, Excel avançado (tabelas dinâmicas, fórmulas).
+• Suporte & Ferramentas: Diagnóstico de hardware e redes (SENA), suporte técnico a usuários, Excel avançado (tabelas dinâmicas, fórmulas).
 • Idiomas: Espanhol (Nativo) | Português (Intermediário B1/B2 - leitura técnica e conversação).`;
 
   const copyPlainText = () => {
@@ -160,7 +146,7 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
         {/* Barra superior de controles ejecutivos (No se imprime) */}
         <div className="cv-modal-toolbar no-print">
           <div className="cv-modal-toolbar-title font-mono">
-            <span>CV_HARVARD_FORMAT_{t.profile.name.replace(/\s+/g, '_').toUpperCase()}.PDF</span>
+            <span>CV_HARVARD_1_PAGINA_{t.profile.name.replace(/\s+/g, '_').toUpperCase()}.PDF</span>
           </div>
 
           <div className="cv-modal-toolbar-actions">
@@ -191,17 +177,17 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
               title="Copiar texto plano estructurado para pegar en bolsas de empleo (ATS)"
             >
               {copiedText ? <Check size={14} className="text-teal" /> : <Copy size={14} />}
-              <span>{copiedText ? (lang === 'es' ? '¡Copiado ATS!' : 'Copiado ATS!') : (lang === 'es' ? 'Copiar Texto ATS' : 'Copiar Texto ATS')}</span>
+              <span>{copiedText ? (lang === 'es' ? '¡Copiado!' : 'Copiado!') : (lang === 'es' ? 'Copiar ATS' : 'Copiar ATS')}</span>
             </button>
 
             <button
               type="button"
               className="btn btn-primary btn-sm"
               onClick={handlePrint}
-              title="Imprimir directamente o guardar como archivo PDF perfecto"
+              title="Guardar PDF en 1 sola página exacta sin hojas en blanco"
             >
               <Printer size={15} />
-              <span>{lang === 'es' ? 'Guardar PDF / Imprimir' : 'Salvar PDF / Imprimir'}</span>
+              <span>{lang === 'es' ? 'Guardar PDF (1 Página)' : 'Salvar PDF (1 Página)'}</span>
             </button>
 
             <button
@@ -215,9 +201,9 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
           </div>
         </div>
 
-        {/* Hoja Harvard Oficial Renderizada */}
+        {/* Hoja Harvard Oficial Renderizada (Calibrada a 1 Sola Página) */}
         <div className={`cv-paper ${fontStyle === 'serif' ? 'font-harvard-serif' : 'font-harvard-sans'}`}>
-          {/* ENCABEZADO HARVARD (Nombre centrado, barra de contacto unificada) */}
+          {/* ENCABEZADO HARVARD */}
           <header className="harvard-header">
             <h1 className="harvard-name">{t.profile.name.toUpperCase()}</h1>
             <div className="harvard-contact-line">
@@ -241,12 +227,12 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
             </h2>
             <p className="harvard-summary-text">
               {lang === 'es'
-                ? 'Estudiante de Ingeniería de Sistemas (Universidad de Córdoba), Tecnólogo en Análisis y Desarrollo de Software (ADSO - SENA) y Técnico en Sistemas egresado del SENA. Especializado en la resolución de cuellos de botella operativos mediante automatización de tareas (web scraping, bots autónomos, scripts programados), desarrollo de microaplicaciones web útiles y soporte técnico de software y hardware. Sólidas bases en desarrollo orientado a objetos (Java 17, Spring Boot), JavaScript moderno, gestión de bases de datos relacionales y herramientas ofimáticas avanzadas (Excel).'
-                : 'Estudante de Engenharia de Sistemas (Universidade de Córdoba), Tecnólogo em Análise e Desenvolvimento de Software (ADSO - SENA) e Técnico em Sistemas formado pelo SENA. Especializado na resolução de gargalos operacionais por meio de automação de processos (web scraping, bots autônomos, scripts agendados), desenvolvimento ágil de microaplicações web e suporte técnico a sistemas e hardware. Sólida fundamentação em desenvolvimento orientado a objetos (Java 17, Spring Boot), JavaScript moderno, bancos de dados relacionais e ferramentas de escritório avançadas (Excel).'}
+                ? 'Estudiante de Ingeniería de Sistemas (Universidad de Córdoba), Tecnólogo en Análisis y Desarrollo de Software (ADSO - SENA) y Técnico en Sistemas egresado del SENA. Especializado en la resolución de cuellos de botella mediante automatización de tareas (web scraping, bots, scripts programados), desarrollo de microaplicaciones web y soporte técnico de software y hardware. Sólidas bases en desarrollo orientado a objetos (Java 17, Spring Boot), JavaScript moderno, gestión de bases de datos relacionales y herramientas ofimáticas avanzadas (Excel).'
+                : 'Estudante de Engenharia de Sistemas (Universidade de Córdoba), Tecnólogo em Análise e Desenvolvimento de Software (ADSO - SENA) e Técnico em Sistemas formado pelo SENA. Especializado na automação de processos (web scraping, bots, scripts agendados), desenvolvimento ágil de microaplicações web e suporte técnico a sistemas e hardware. Sólida fundamentação em POO (Java 17, Spring Boot), JavaScript moderno, bancos de dados relacionais e ferramentas de escritório avançadas (Excel).'}
             </p>
           </section>
 
-          {/* 2. EDUCACIÓN (Formato Harvard FAS: Institución a la izq, Ciudad a la der; Título cursiva a la izq, Fechas a la der) */}
+          {/* 2. EDUCACIÓN */}
           <section className="harvard-section">
             <h2 className="harvard-section-title">
               {lang === 'es' ? 'EDUCACIÓN' : 'FORMAÇÃO ACADÊMICA'}
@@ -263,14 +249,14 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
                     <em>{lang === 'es' ? 'Pregrado en Ingeniería de Sistemas' : 'Graduação em Engenharia de Sistemas'}</em>
                   </span>
                   <span className="harvard-date">
-                    <em>{lang === 'es' ? 'En curso (Estado: Activo)' : 'Em andamento (Status: Ativo)'}</em>
+                    <em>{lang === 'es' ? 'En curso (Activo)' : 'Em andamento (Ativo)'}</em>
                   </span>
                 </div>
                 <ul className="harvard-bullets">
                   <li>
                     {lang === 'es'
-                      ? 'Formación universitaria en algoritmos y estructuras de datos, arquitectura de software, bases de datos relacionales, cálculo y gestión de proyectos tecnológicos.'
-                      : 'Formação universitária em algoritmos e estruturas de dados, arquitetura de software, bancos de dados relacionais, cálculo e governança de tecnologia.'}
+                      ? 'Algoritmos, estructuras de datos, arquitectura de software, bases de datos relacionales y gestión de proyectos tecnológicos.'
+                      : 'Algoritmos, estruturas de dados, arquitetura de software, bancos de dados relacionais e governança tecnológica.'}
                   </li>
                 </ul>
               </div>
@@ -286,14 +272,14 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
                     <em>{lang === 'es' ? 'Tecnología en Análisis y Desarrollo de Software (ADSO)' : 'Tecnólogo em Análise e Desenvolvimento de Software (ADSO)'}</em>
                   </span>
                   <span className="harvard-date">
-                    <em>{lang === 'es' ? 'En curso (Estado: Activo)' : 'Em andamento (Status: Ativo)'}</em>
+                    <em>{lang === 'es' ? 'En curso (Activo)' : 'Em andamento (Ativo)'}</em>
                   </span>
                 </div>
                 <ul className="harvard-bullets">
                   <li>
                     {lang === 'es'
-                      ? 'Ciclo de vida del software (SDLC), metodologías ágiles (Scrum), desarrollo backend con Java y Spring Boot 3, interfaces con React y modelado UML.'
-                      : 'Ciclo de vida de software (SDLC), metodologias ágeis (Scrum), desenvolvimento backend com Java e Spring Boot 3, interfaces com React e modelagem UML.'}
+                      ? 'Ciclo de vida del software (SDLC), Scrum, desarrollo backend con Java y Spring Boot 3, interfaces web con React y modelado UML.'
+                      : 'Ciclo de vida de software (SDLC), Scrum, backend com Java e Spring Boot 3, interfaces com React e modelagem UML.'}
                   </li>
                 </ul>
               </div>
@@ -315,15 +301,15 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
                 <ul className="harvard-bullets">
                   <li>
                     {lang === 'es'
-                      ? 'Diagnóstico, mantenimiento preventivo y correctivo de hardware, configuración de redes de datos, cableado estructurado, soporte de sistemas y seguridad lógica.'
-                      : 'Diagnóstico e manutenção preventiva e corretiva de hardware, infraestrutura de redes, cabeamento estruturado, suporte técnico e segurança básica.'}
+                      ? 'Mantenimiento preventivo y correctivo de hardware, configuración de redes de datos, cableado estructurado y soporte técnico.'
+                      : 'Manutenção preventiva e corretiva de hardware, infraestrutura de redes, cabeamento estruturado e suporte técnico.'}
                   </li>
                 </ul>
               </div>
             </div>
           </section>
 
-          {/* 3. PROYECTOS DE INGENIERÍA & AUTOMATIZACIÓN (STAR Framework: Verbo de acción + reto técnico + resultado) */}
+          {/* 3. PROYECTOS TÉCNICOS & DE INGENIERÍA */}
           <section className="harvard-section">
             <h2 className="harvard-section-title">
               {lang === 'es' ? 'PROYECTOS TÉCNICOS & DE INGENIERÍA' : 'PROJETOS TÉCNICOS & ENGENHARIA'}
@@ -340,18 +326,13 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
                 <ul className="harvard-bullets">
                   <li>
                     {lang === 'es'
-                      ? 'Diseñó e implementó una Progressive Web App (PWA) offline-first con persistencia local y sincronización reactiva a base de datos PostgreSQL mediante Supabase.'
-                      : 'Projetou e desenvolveu uma Progressive Web App (PWA) offline-first com persistência local e sincronização reativa a banco PostgreSQL via Supabase.'}
+                      ? 'Diseñó PWA offline-first con persistencia local y sincronización reactiva en base de datos PostgreSQL mediante Supabase.'
+                      : 'Desenvolveu PWA offline-first com persistência local e sincronização reativa em banco PostgreSQL via Supabase.'}
                   </li>
                   <li>
                     {lang === 'es'
-                      ? 'Integró motor de reconocimiento óptico de caracteres (OCR) ejecutado en segundo plano con Web Workers, procesando documentos en cliente con 0ms de latencia en red y sin comprometer datos en servidores externos.'
-                      : 'Integrou motor de reconhecimento óptico de caracteres (OCR) em Web Workers, processando documentos no cliente com 0ms de latência de rede sem expor dados a servidores externos.'}
-                  </li>
-                  <li>
-                    {lang === 'es'
-                      ? 'Incorporó exportación automatizada de reportes en PDF y asistencia de inferencia con modelos LLM ultrarrápidos vía Groq SDK.'
-                      : 'Incorporou exportação de relatórios em PDF e inferência assistida por modelos LLM ultrarrápidos via Groq SDK.'}
+                      ? 'Integró motor OCR en Web Workers procesando documentos en cliente con 0ms de latencia, exportación en PDF e inferencia LLM con Groq SDK.'
+                      : 'Integrou motor OCR em Web Workers no cliente com 0ms de latência, exportação em PDF e inferência LLM via Groq SDK.'}
                   </li>
                 </ul>
               </div>
@@ -367,18 +348,13 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
                 <ul className="harvard-bullets">
                   <li>
                     {lang === 'es'
-                      ? 'Desarrolló un crawler desatendido programado con cron jobs para extracción periódica de catálogos comerciales en sitios de gran volumen (Almacenes Éxito).'
-                      : 'Desenvolveu um crawler autônomo agendado com rotinas cron para extração periódica de catálogos de e-commerce de grande porte.'}
+                      ? 'Crawler desatendido con cron jobs para rastreo periódico de catálogos y análisis en SQLite contrastando contra históricos.'
+                      : 'Crawler autônomo com cron jobs para coleta periódica de catálogos e análise em SQLite para filtrar falsas promoções.'}
                   </li>
                   <li>
                     {lang === 'es'
-                      ? 'Estructuró motor de persistencia y análisis en SQLite para contrastar precios contra promedios históricos, descartando falsas rebajas y filtrando promociones anómalas.'
-                      : 'Estruturou rotina de persistência e análise em SQLite para contrastar preços contra médias históricas, descartando falsos descontos publicitários.'}
-                  </li>
-                  <li>
-                    {lang === 'es'
-                      ? 'Automatizó el despacho de alertas push en tiempo real a través de Telegram Bot API en menos de 2 segundos tras detectar anomalías de precio.'
-                      : 'Automatizou o disparo de alertas push em tempo real via Telegram Bot API em menos de 2 segundos após detectar quedas reais de preço.'}
+                      ? 'Automatizó despacho de alertas push en tiempo real vía Telegram Bot API en menos de 2 segundos tras detectar caídas de precio.'
+                      : 'Automatizou alertas push em tempo real via Telegram Bot API em menos de 2 segundos após detectar quedas reais de preço.'}
                   </li>
                 </ul>
               </div>
@@ -394,35 +370,13 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
                 <ul className="harvard-bullets">
                   <li>
                     {lang === 'es'
-                      ? 'Arquitectó backend empresarial desacoplado en capas (Controller, Service, Repository) para la trazabilidad y auditoría de ingresos/egresos vehiculares en campus.'
-                      : 'Arquitetou backend corporativo em camadas (Controller, Service, Repository) para rastreabilidade e auditoria de entradas e saídas de veículos em campus.'}
+                      ? 'Arquitectó backend empresarial desacoplado en capas (Controller, Service, Repository) para trazabilidad y auditoría de accesos.'
+                      : 'Arquitetou backend corporativo em camadas (Controller, Service, Repository) para rastreabilidade de acessos em campus.'}
                   </li>
                   <li>
                     {lang === 'es'
-                      ? 'Implementó validaciones transaccionales estrictas en la capa de servicio para prevenir registros simultáneos sin salida previa y asegurar la consistencia del inventario activo.'
-                      : 'Implementou validações transacionais rigorosas na camada de serviço para evitar duplicidades de entrada e assegurar a consistência do inventário ativo.'}
-                  </li>
-                </ul>
-              </div>
-
-              {/* Patrones POO */}
-              <div className="harvard-entry">
-                <div className="harvard-entry-row1">
-                  <span className="harvard-project-title">
-                    <strong>Catálogo de Dispositivos & Patrones POO</strong> | <em>Java 17, Patrones GoF, Maven</em>
-                  </span>
-                  <span className="harvard-date"><em>2024</em></span>
-                </div>
-                <ul className="harvard-bullets">
-                  <li>
-                    {lang === 'es'
-                      ? 'Implementó patrón Singleton thread-safe con Double-Checked Locking y ConcurrentHashMap para gestión centralizada de stock sin bloqueos de rendimiento.'
-                      : 'Implementou padrão Singleton thread-safe com Double-Checked Locking e ConcurrentHashMap para gerenciamento centralizado de estoque sem gargalos de desempenho.'}
-                  </li>
-                  <li>
-                    {lang === 'es'
-                      ? 'Aplicó principios SOLID y polimorfismo dinámico garantizando desacoplamiento estructural y facilidad de extensión ante nuevas familias de productos.'
-                      : 'Aplicou princípios SOLID e polimorfismo dinâmico, assegurando baixo acoplamento e extensibilidade limpa diante de novos produtos.'}
+                      ? 'Implementó validaciones transaccionales estrictas en la capa de servicio para prevenir duplicidades y asegurar consistencia de inventario.'
+                      : 'Implementou validações transacionais rigorosas na camada de serviço para impedir duplicidades de entrada.'}
                   </li>
                 </ul>
               </div>
@@ -453,53 +407,44 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
                 <ul className="harvard-bullets">
                   <li>
                     {lang === 'es'
-                      ? 'Diagnóstico, mantenimiento preventivo y correctivo de hardware y software, configuración de periféricos y solución ágil de incidencias técnicas.'
+                      ? 'Diagnóstico y mantenimiento preventivo/correctivo de equipos, configuración de periféricos y solución ágil de incidencias técnicas.'
                       : 'Diagnóstico e manutenção de equipamentos de informática, configuração de redes locais e resolução de falhas operacionais.'}
                   </li>
                   <li>
                     {lang === 'es'
-                      ? 'Automatización de tareas repetitivas de recolección y análisis de información mediante scripts en Node.js, reduciendo horas operativas manuales.'
-                      : 'Automação de rotinas repetitivas de coleta de dados com scripts em Node.js, otimizando o tempo operacional.'}
-                  </li>
-                  <li>
-                    {lang === 'es'
-                      ? 'Gestión de reportes técnicos y análisis de datos en Microsoft Excel avanzado (tablas dinámicas, fórmulas lógicas y validación de datos).'
-                      : 'Gestão de relatórios técnicos e análise de dados em Microsoft Excel avançado (tabelas dinâmicas, fórmulas e validações).'}
+                      ? 'Automatización de tareas repetitivas de recolección de datos mediante scripts en Node.js y reportes avanzados en Microsoft Excel.'
+                      : 'Automação de rotinas repetitivas de coleta de dados com scripts Node.js e confecção de relatórios avançados em Excel.'}
                   </li>
                 </ul>
               </div>
             </div>
           </section>
 
-          {/* 5. COMPETENCIAS TÉCNICAS E IDIOMAS (Formato en línea categorizado Harvard) */}
-          <section className="harvard-section">
+          {/* 5. COMPETENCIAS TÉCNICAS E IDIOMAS */}
+          <section className="harvard-section" style={{ marginBottom: 0 }}>
             <h2 className="harvard-section-title">
               {lang === 'es' ? 'COMPETENCIAS TÉCNICAS E IDIOMAS' : 'COMPETÊNCIAS TÉCNICAS E IDIOMAS'}
             </h2>
             <div className="harvard-skills-block">
               <p>
-                <strong>{lang === 'es' ? 'Lenguajes de Programación:' : 'Linguagens de Programação:'}</strong>{' '}
+                <strong>{lang === 'es' ? 'Lenguajes:' : 'Linguagens:'}</strong>{' '}
                 Java 17, JavaScript (ES6+), SQL, HTML5, CSS3.
               </p>
               <p>
-                <strong>{lang === 'es' ? 'Frameworks & Librerías:' : 'Frameworks & Bibliotecas:'}</strong>{' '}
-                Spring Boot 3, Spring MVC, React 18, Vite, Express, Cheerio, Axios, Tesseract.js OCR, jspdf.
+                <strong>{lang === 'es' ? 'Frameworks & Herramientas:' : 'Frameworks & Ferramentas:'}</strong>{' '}
+                Spring Boot 3, React 18, Vite, Express, Cheerio, Axios, Tesseract.js, jspdf, PostgreSQL, SQLite, Supabase, Git, GitHub.
               </p>
               <p>
-                <strong>{lang === 'es' ? 'Bases de Datos & Cloud:' : 'Bancos de Dados & Cloud:'}</strong>{' '}
-                PostgreSQL, SQLite, Supabase, Git, GitHub, RESTful APIs, Netlify, Cron Jobs.
-              </p>
-              <p>
-                <strong>{lang === 'es' ? 'Sistemas & Soporte Técnico:' : 'Sistemas & Suporte Técnico:'}</strong>{' '}
+                <strong>{lang === 'es' ? 'Soporte & Sistemas:' : 'Suporte & Sistemas:'}</strong>{' '}
                 {lang === 'es'
-                  ? 'Diagnóstico de hardware y redes de datos (SENA), soporte técnico a usuarios, resolución de incidencias, Microsoft Excel avanzado (tablas dinámicas, fórmulas, reportes).'
-                  : 'Diagnóstico de hardware e redes de dados (SENA), suporte técnico a usuários, resolução de chamados, Microsoft Excel avançado (tabelas dinâmicas, fórmulas).'}
+                  ? 'Diagnóstico de hardware y redes (SENA), soporte a usuarios, resolución de incidencias, Excel avanzado (tablas dinámicas, fórmulas).'
+                  : 'Diagnóstico de hardware e redes (SENA), suporte a usuários, resolução de chamados, Excel avançado (tabelas dinâmicas, fórmulas).'}
               </p>
               <p>
                 <strong>{lang === 'es' ? 'Idiomas:' : 'Idiomas:'}</strong>{' '}
                 {lang === 'es'
-                  ? 'Español (Nativo) | Portugués (Intermedio B1/B2 - lectura técnica, escritura y conversación aplicada).'
-                  : 'Espanhol (Nativo) | Português (Intermediário B1/B2 - leitura técnica, escrita e conversação aplicada).'}
+                  ? 'Español (Nativo) | Portugués (Intermedio B1/B2 - lectura técnica y conversación).'
+                  : 'Espanhol (Nativo) | Português (Intermediário B1/B2 - leitura técnica e conversação).'}
               </p>
             </div>
           </section>
@@ -507,7 +452,9 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
       </div>
 
       <style>{`
-        /* Estilos del Modal */
+        /* ========================================================
+           MODAL INTERACTIVO EN PANTALLA
+           ======================================================== */
         .cv-modal-backdrop {
           position: fixed;
           top: 0;
@@ -521,7 +468,7 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 1.25rem;
+          padding: 1rem;
           overflow-y: auto;
         }
 
@@ -530,27 +477,27 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
           border: 1px solid var(--border-subtle);
           border-radius: 12px;
           width: 100%;
-          max-width: 890px;
-          max-height: 95vh;
+          max-width: 860px;
+          max-height: 96vh;
           display: flex;
           flex-direction: column;
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
           overflow: hidden;
         }
 
-        /* Barra de herramientas */
         .cv-modal-toolbar {
-          padding: 0.75rem 1.25rem;
+          padding: 0.65rem 1.15rem;
           background-color: #18181f;
           border-bottom: 1px solid var(--border-hairline);
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 1rem;
+          gap: 0.8rem;
+          flex-shrink: 0;
         }
 
         .cv-modal-toolbar-title {
-          font-size: 0.76rem;
+          font-size: 0.75rem;
           color: var(--accent-teal);
           white-space: nowrap;
           overflow: hidden;
@@ -560,7 +507,7 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
         .cv-modal-toolbar-actions {
           display: flex;
           align-items: center;
-          gap: 0.6rem;
+          gap: 0.5rem;
         }
 
         .cv-font-toggle {
@@ -575,8 +522,8 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
           background: transparent;
           border: none;
           color: var(--text-tertiary);
-          font-size: 0.72rem;
-          padding: 3px 8px;
+          font-size: 0.7rem;
+          padding: 3px 7px;
           border-radius: 4px;
           cursor: pointer;
           transition: all 0.15s ease;
@@ -592,8 +539,8 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
           background: transparent;
           border: 1px solid var(--border-hairline);
           color: var(--text-secondary);
-          width: 32px;
-          height: 32px;
+          width: 30px;
+          height: 30px;
           border-radius: 6px;
           display: flex;
           align-items: center;
@@ -607,14 +554,15 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
         }
 
         /* ========================================================
-           HOJA HARVARD STANDARD (ESTÁNDAR OFICIAL HARVARD RESUME)
+           HOJA HARVARD (ONE-PAGE COMPACT RESUME)
            ======================================================== */
         .cv-paper {
           background-color: #ffffff;
           color: #111111;
-          padding: 3rem 3.5rem;
+          padding: 2rem 2.5rem;
           overflow-y: auto;
-          line-height: 1.35;
+          line-height: 1.25;
+          font-size: 0.82rem;
         }
 
         .font-harvard-serif {
@@ -628,33 +576,33 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
         /* Encabezado */
         .harvard-header {
           text-align: center;
-          margin-bottom: 1.25rem;
+          margin-bottom: 0.65rem;
         }
 
         .harvard-name {
-          font-size: 1.75rem;
+          font-size: 1.45rem;
           font-weight: 700;
-          letter-spacing: 0.05em;
+          letter-spacing: 0.04em;
           color: #000000;
-          margin-bottom: 0.35rem;
+          margin-bottom: 0.2rem;
           line-height: 1.1;
         }
 
         .harvard-contact-line {
-          font-size: 0.88rem;
+          font-size: 0.78rem;
           color: #222222;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-wrap: wrap;
-          gap: 0.45rem;
-          line-height: 1.4;
+          gap: 0.35rem;
+          line-height: 1.3;
         }
 
         .harvard-subline {
-          font-size: 0.8rem;
+          font-size: 0.74rem;
           color: #444444;
-          margin-top: 0.25rem;
+          margin-top: 0.15rem;
         }
 
         .harvard-contact-line .sep {
@@ -671,35 +619,35 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
           text-decoration: underline;
         }
 
-        /* Secciones Harvard */
+        /* Secciones */
         .harvard-section {
-          margin-bottom: 1.15rem;
-        }
-
-        .harvard-section-title {
-          font-size: 0.88rem;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          color: #000000;
-          border-bottom: 1px solid #000000;
-          padding-bottom: 0.15rem;
           margin-bottom: 0.55rem;
         }
 
+        .harvard-section-title {
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: #000000;
+          border-bottom: 1px solid #000000;
+          padding-bottom: 0.1rem;
+          margin-bottom: 0.3rem;
+        }
+
         .harvard-summary-text {
-          font-size: 0.86rem;
+          font-size: 0.77rem;
           text-align: justify;
           color: #222222;
-          line-height: 1.45;
+          line-height: 1.3;
           margin: 0;
         }
 
-        /* Entradas (Educación, Proyectos, Experiencia) */
+        /* Entradas */
         .harvard-entries {
           display: flex;
           flex-direction: column;
-          gap: 0.65rem;
+          gap: 0.32rem;
         }
 
         .harvard-entry {
@@ -711,8 +659,8 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
           display: flex;
           align-items: baseline;
           justify-content: space-between;
-          font-size: 0.88rem;
-          line-height: 1.35;
+          font-size: 0.79rem;
+          line-height: 1.25;
         }
 
         .harvard-institution,
@@ -723,46 +671,46 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
 
         .harvard-location,
         .harvard-date {
-          font-size: 0.84rem;
+          font-size: 0.75rem;
           color: #222222;
           white-space: nowrap;
           text-align: right;
         }
 
         .harvard-degree {
-          font-size: 0.86rem;
+          font-size: 0.77rem;
           color: #222222;
         }
 
         .harvard-project-title {
-          font-size: 0.87rem;
+          font-size: 0.78rem;
           color: #111111;
         }
 
-        /* Viñetas Harvard */
+        /* Viñetas */
         .harvard-bullets {
-          margin: 0.25rem 0 0.35rem 0;
-          padding-left: 1.25rem;
+          margin: 0.12rem 0 0.18rem 0;
+          padding-left: 1.15rem;
           list-style-type: disc;
         }
 
         .harvard-bullets li {
-          font-size: 0.84rem;
+          font-size: 0.76rem;
           color: #222222;
-          line-height: 1.38;
-          margin-bottom: 0.15rem;
+          line-height: 1.28;
+          margin-bottom: 0.08rem;
           text-align: justify;
         }
 
-        /* Bloque de Habilidades */
+        /* Bloque de Competencias */
         .harvard-skills-block {
-          font-size: 0.85rem;
+          font-size: 0.76rem;
           color: #222222;
-          line-height: 1.5;
+          line-height: 1.35;
         }
 
         .harvard-skills-block p {
-          margin: 0.18rem 0;
+          margin: 0.08rem 0;
         }
 
         .harvard-skills-block strong {
@@ -771,64 +719,146 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
         }
 
         /* ========================================================
-           IMPRESIÓN / EXPORTACIÓN PERFECTA A PDF (HARVARD STANDARDS)
+           IMPRESIÓN / EXPORTACIÓN EXACTA A 1 SOLA HOJA (PAGE-BREAK FREE)
            ======================================================== */
         @media print {
-          body * {
-            visibility: hidden !important;
+          /* 1. Ocultar el resto del sitio y evitar páginas fantasmas */
+          nav,
+          main,
+          footer,
+          .portfolio-app-root > nav,
+          .portfolio-app-root > main,
+          .portfolio-app-root > footer,
+          .no-print {
+            display: none !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+          }
+
+          html, body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #ffffff !important;
+            color: #000000 !important;
+            overflow: hidden !important;
+          }
+
+          @page {
+            size: letter portrait;
+            margin: 0.32in 0.42in;
           }
 
           .cv-modal-backdrop {
-            position: absolute !important;
-            left: 0 !important;
-            top: 0 !important;
+            position: static !important;
+            display: block !important;
             width: 100% !important;
             height: auto !important;
-            background: none !important;
+            background: transparent !important;
             padding: 0 !important;
+            margin: 0 !important;
             overflow: visible !important;
           }
 
           .cv-modal-container {
             border: none !important;
             box-shadow: none !important;
+            background: #ffffff !important;
+            width: 100% !important;
             max-width: 100% !important;
             max-height: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
             overflow: visible !important;
-            background: #ffffff !important;
-          }
-
-          .no-print {
-            display: none !important;
           }
 
           .cv-paper {
-            visibility: visible !important;
             display: block !important;
+            width: 100% !important;
             padding: 0 !important;
-            margin: 0.5in 0.6in !important;
+            margin: 0 !important;
             color: #000000 !important;
             background: #ffffff !important;
+            font-size: 8.5pt !important;
+            line-height: 1.22 !important;
             overflow: visible !important;
           }
 
-          .cv-paper * {
-            visibility: visible !important;
+          .harvard-header {
+            margin-bottom: 0.35rem !important;
+          }
+
+          .harvard-name {
+            font-size: 14pt !important;
+            margin-bottom: 0.15rem !important;
+          }
+
+          .harvard-contact-line {
+            font-size: 8pt !important;
+          }
+
+          .harvard-subline {
+            font-size: 7.5pt !important;
+            margin-top: 0.1rem !important;
+          }
+
+          .harvard-section {
+            margin-bottom: 0.38rem !important;
           }
 
           .harvard-section-title {
+            font-size: 8.5pt !important;
+            padding-bottom: 0.05rem !important;
+            margin-bottom: 0.2rem !important;
             border-bottom: 1px solid #000000 !important;
           }
 
-          @page {
-            size: letter;
-            margin: 0.4in 0.5in;
+          .harvard-summary-text {
+            font-size: 8pt !important;
+            line-height: 1.22 !important;
+          }
+
+          .harvard-entries {
+            gap: 0.22rem !important;
+          }
+
+          .harvard-entry-row1,
+          .harvard-entry-row2 {
+            font-size: 8.2pt !important;
+            line-height: 1.2 !important;
+          }
+
+          .harvard-location,
+          .harvard-date {
+            font-size: 7.8pt !important;
+          }
+
+          .harvard-bullets {
+            margin: 0.08rem 0 0.12rem 0 !important;
+            padding-left: 1rem !important;
+          }
+
+          .harvard-bullets li {
+            font-size: 7.8pt !important;
+            line-height: 1.2 !important;
+            margin-bottom: 0.04rem !important;
+          }
+
+          .harvard-skills-block {
+            font-size: 7.8pt !important;
+            line-height: 1.24 !important;
+          }
+
+          .harvard-skills-block p {
+            margin: 0.05rem 0 !important;
           }
         }
 
         @media (max-width: 768px) {
           .cv-paper {
-            padding: 1.75rem 1.25rem;
+            padding: 1.5rem 1rem;
           }
 
           .harvard-entry-row1,
@@ -840,11 +870,12 @@ COMPETÊNCIAS TÉCNICAS E IDIOMAS
           .harvard-location,
           .harvard-date {
             text-align: left;
-            margin-top: 0.1rem;
+            margin-top: 0.08rem;
           }
         }
       `}</style>
     </div>
   );
 }
+
 
